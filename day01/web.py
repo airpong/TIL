@@ -1,4 +1,4 @@
 import webbrowser
-keywords = ['아이유','미세먼지','하언']
+keywords = ['아이유','미세먼지','하창언이']
 for k in keywords:
 	webbrowser.open("https://search.daum.net/search?w=tot&q="+k)
