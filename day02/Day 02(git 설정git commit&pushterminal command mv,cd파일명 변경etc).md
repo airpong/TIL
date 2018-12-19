@@ -67,11 +67,11 @@
 
 * ###### csv 형식 write(dict 기준)
 
-  1. csv 모듈을 사용하는 방법
+  1. csv 모듈을 사용하지 않는 방법
      1. csv의 확장자를 가지는 파일을 open(생성)후 객체(f)에 저장.
      2. dict.items() 를 통해 list 생성후 객체(item)에 저장
      3. 반복문을 통해 f.write('f'{item[o]},{item[1]}') 으로 작성
-  2. csv 모듈을 사용하지 않는 방법
+  2. csv 모듈을 사용하는 방법
      1. csv 모듈 import
      2. csv의 확장자를 가지는 파일을 open(생성)후 객체(f)에 저장.
      3. csv_writer=csv.writer(f) 으로 csv 쓰기 객체 생성
