@@ -40,6 +40,4 @@ for i in ssafy["classes"]["gj"].values():
     print(i)
 for i,j in (ssafy["language"]["python"]["frameworks"].items()):
     print(f'{i}는 {j}이다.')
-randomClass = random.choice(list(ssafy["classes"]["gm"]["groups"].keys()))
-randomPerson = random.choice(ssafy["classes"]["gm"]["groups"][randomClass])
-print(F'오늘의 당번은 {randomPerson}')
+print(F'오늘의 당번은 {random.choice(ssafy["classes"]["gm"]["groups"][random.choice(list(ssafy["classes"]["gm"]["groups"].keys()))])}')
