@@ -1,5 +1,6 @@
 from flask import Flask,render_template , request
 import requests
+import os
 import random
 app = Flask(__name__)
 
@@ -14,7 +15,14 @@ def ping():
 @app.route('/pong')
 def pong():
     ball = (request.args['ball'])
-    images=["http://post.phinf.naver.net/MjAxODA1MjFfMjc4/MDAxNTI2ODkyMjYwNzU4.DCGBjOePRA5JfSOlQzM3UBoOTlT1e2fi4PQPYFaUD-sg.eB8GiXKtCyi2jUea0uAvWCQR_NMFc2gjqXGXXiAgjTEg.JPEG/IhBnNNEtIZ98F_6e5PBHh2AnbU-k.jpg","http://blogfiles.naver.net/20160909_134/pu9373_14733955206135IozT_JPEG/P090901004.jpg","https://t1.daumcdn.net/cfile/tistory/2765F54B529AE0ED34","https://image.fmkorea.com/files/attach/new/20180129/486616/906776284/924004830/11d4ab0fadb3567492b0fd4e95a5fd5c.jpg","http://imgnews.naver.net/image/144/2010/02/02/20100202000943_r.jpg","http://post.phinf.naver.net/MjAxODAzMjNfNzEg/MDAxNTIxNzY0OTI3NTIw.fAcMRc2PDn-gVFcdkosQZFCJwqGWRSZ9aNCtX2oAaGgg.QXeyPjPneJmpPBQox66tLfFpNG4NxwldSVfDFI3kHIAg.JPEG/IQOH6WyCq7KoWzBeJqVdo4RezePI.jpg"]
+    images = []
+    if ball == "김유림" :
+        images.append("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA5MjFfMTI0%2FMDAxNTA1OTIxMDA4NjM0.GYpvKzyqxTFQO9Wnm-6OyMVOQUGbljVDiSIDA5xGAg4g.p_nDiO2McvDRsHOlL7d3AjqZlcECWIhs9YOLT9ouc0kg.JPEG.1wisemom%2FIMG_4632.JPG&type=b400 ")
+        images.append("http://blogfiles.naver.net/MjAxNzEwMjJfMTM2/MDAxNTA4NjQxNzg0Mjcz.pJoli-sy6XO8U7J6FguYyYx6Uj2aWNwCTp-D9KtJh_8g.iDByej9nO3hKwQWZS8EEJypd_hc3XAYOQU5g7O87a7Ug.PNG.giraffenzookeeper/%BD%BD%B6%F3%C0%CC%B5%E56.PNG")
+    elif ball == "김교훈":
+        images.append("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA5MjFfMTI0%2FMDAxNTA1OTIxMDA4NjM0.GYpvKzyqxTFQO9Wnm-6OyMVOQUGbljVDiSIDA5xGAg4g.p_nDiO2McvDRsHOlL7d3AjqZlcECWIhs9YOLT9ouc0kg.JPEG.1wisemom%2FIMG_4632.JPG&type=b400")
+    else :
+        images=["https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA5MjFfMTI0%2FMDAxNTA1OTIxMDA4NjM0.GYpvKzyqxTFQO9Wnm-6OyMVOQUGbljVDiSIDA5xGAg4g.p_nDiO2McvDRsHOlL7d3AjqZlcECWIhs9YOLT9ouc0kg.JPEG.1wisemom%2FIMG_4632.JPG&type=b400 ","http://blogfiles.naver.net/20140514_232/sakwanamu_1400063223706AttNn_JPEG/IMG_5803.JPG","http://blogfiles.naver.net/MjAxNzEwMjJfMTM2/MDAxNTA4NjQxNzg0Mjcz.pJoli-sy6XO8U7J6FguYyYx6Uj2aWNwCTp-D9KtJh_8g.iDByej9nO3hKwQWZS8EEJypd_hc3XAYOQU5g7O87a7Ug.PNG.giraffenzookeeper/%BD%BD%B6%F3%C0%CC%B5%E56.PNG"]
     image = random.choice(images)
     print("abccc",image)
     return render_template('pong.html',ball_in_html=ball,result=image)
@@ -29,3 +37,16 @@ def lotto(num):
         winner.append(lotto[f'drwtNo{i}'])
     bonus = lotto["bnusNo"]
     return render_template('lotto.html',w=winner,b=bonus,n=num)
+
+@app.route('/write')
+def write():
+    return render_template('write.html')
+
+
+@app.route('/send')
+def send():
+    token_chang=os.getenv('TELEGRAM_BOT_TOKEN')
+    chat_id_chang=os.getenv('CHAT_ID')
+    text = request.args['message']
+    requests.get(f'https://api.telegram.org/bot{token_chang}/sendMessage?chat_id={chat_id_chang}&text={text}')
+    return render_template('send.html')
