@@ -7,7 +7,7 @@
 * `git init`:git초기화,git으로 관리하겠다
 * `git remote add orgin 주소`:원격 저장소 등록
   * `git remote set -url origin 주소`:원격 저장소 수정
-
+* `git credential reject \n protocol = https \n host=github.com
 ### git Commit & push
 
 * `git push origin master` :git 사이트에 업로드
