@@ -1,0 +1,8 @@
+.font {
+    /* 1. font-size */
+    font-size:40 px;
+    /* font-style: italic; */
+    font-weight: 700; /* bold */
+    /* font-family: 'Times New Roman', Times, serif */
+    font-family: 'Sunflower', sans-serif;
+}

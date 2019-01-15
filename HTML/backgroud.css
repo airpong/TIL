@@ -1,0 +1,17 @@
+div {
+    height: 200px;
+}
+
+.backgroud-color {
+    background-color: blue;
+}
+
+.backgroud-image {
+    background-image: url(images/prague.jpg);
+    background-position: center center;
+    /* background-size: 200px 200px; */
+    background-size: cover;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

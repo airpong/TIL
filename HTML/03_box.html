@@ -24,11 +24,34 @@
             border-radius: 20px;
             box-sizing: border-box;
         }
+        .box2 {
+            /* width = 화면의 끝까지 자동적으로, height = 글자수에 따라 because of {diplay: block} */
+            /* display values */
+            /* 1. block */
+            /* div, h1-h6, p, ol, ul, li, table, form */
+            /* 2. inline : 자기가 담고있는 컨텐츠만 가지고 있는것. */
+            /* span, a, strong, em, img, input */
+            /* (주의) width, heigt, margin-top, margin-botton 사용 불가 */
+            /* 3. inline-block */
+            /* inline+block 특징 섞어서 가지고 있음. */
+            /* 4. None */
+            /* 화면에 보이지 않음. (공간조차 사라짐) */
+            border: 2px solid red;
+            background-color:gray;
+            display: inline;
+            /* visibility: hidden; */
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
+    <div class="box2"> 
+        이것은 박스2입니다.
+    </div>
+    박스2와 박스 사이입니다.
     <div class="box"> 
         이것은 박스입니다.
     </div>
+    박스 밑입니다.
 </body>
 </html>

@@ -1,82 +1,21 @@
 <!DOCTYPE html>
-<html lan="ko">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=divice-width, initail-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hi, HTML!</title>
-    <!-- 1. In-line style -->
-    <!-- 2. Embedding style (style tag 사용하기) -->
-
-    <style>
-        /* CSS */
-        /* h1 : 선택자 */
-        /* color : 속성(property) */
-        /* aqua:값(value) */
-        /* {}:선언 블록 */
-        /* color: aqua; : 선언문 */
-        /* 전체 : 규칙 (Rule) */
-        /* 규칙 묶음:스타일 시트(stylesheet) */
-        h1 {
-            color: aqua;
-        }
-
-    </style>
-    <!-- 3. Link style (css 파일 link) -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOX</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Heading -->
-    <h1>Hi,there!</h1>
-    <h2>Hi,there!</h2>
-    <h3>Hi,there!</h3>
-    <h4>Hi,there!</h4>
-    <h5>Hi,there!</h5>
-    <h6>Hi,there!</h6>
-    <b>이것은 굵은 글씨입니다.</b>
-    <!-- Bold -->
-    <h1><b>이것은 h1굵은 글씨입니다.</b></h1>
-    <strong>This is strong.(semantic)</strong>
-    <!-- italic -->
-    <i>This is italic</i>
-    <em>This is em.(semantic)</em> <!-- empahsize -->
-    <h2>This is<mark>Markd</mark>.</h2>
-    <!-- del,ins -->
-    <h2>This is<del>del</del>.</h2>
-    <h2>This is<ins>ins</ins>.</h2>
-    <!-- sub/sup -->
-    <h2>This is<sub>sub</sub>.</h2>
-    <h2>This is<sup>sup</sup>.</h2>
-    <p>
-        this is p tag.<br>
-        this is p tag.
-        this is p tag.
-        this is p tag.<br>
-        this is p tag.
-        this is p tag.
-        this is p tag.<br>
-        this is p tag.<br>
-    </p>
-    <pre>
-        from flask import Flask
-        app = Flask(__name__)
-
-        @app.route('/')
-    </pre>
-    <!-- hr -->
-    <hr>
-    <!-- q -->
-    <q>미국의 저명한 교수, Andrew. K . koy</q>
-    <!-- ol/ul/li -->
-    <ol>
-        <li>first</li>
-        <li>second</li>
-        <li>third</li>
-    </ol>
-    <ul>
-        <li>first</li>
-        <li>second</li>
-        <li>third</li>
-    </ul>
+  <div class="big-box">
+    <div class="small-box" id="red"></div>
+    <div class="small-box" id="gold"></div>
+    <div class="small-box" id="green"></div>
+    <div class="small-box" id="blue"></div>
+    <div class="small-box" id="pink"></div>
+    <div class="small-box" id="purple"></div>
+    <div class="small-box" id="orange"></div>
+  </div>
 </body>
 </html>

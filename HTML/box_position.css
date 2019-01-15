@@ -1,0 +1,33 @@
+
+/* 4.fixed */
+.box-fixed {
+    position: fixed;
+    background-color: pink;
+    width:100px;
+    height: 100px;
+    top: 50px;
+    right: 50px;
+}
+.box-absulute {
+    position: absolute;
+    background: green;
+    width: 100px;
+    height: 100px;
+    top:50px;
+    left: 50px;
+    z-index: 10;
+}
+.box-relative {
+    position: relative;
+    background: blue;
+    width : 100px;
+    height: 100px;
+    z-index: 20;
+}
+.box-static{
+    background-color: gray;
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
