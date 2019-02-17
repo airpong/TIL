@@ -55,9 +55,10 @@
 }
 
 #orange{
-    border-block-end-color: orange;
+    background-color: orange;
     position: absolute;
 }
 #purple{
-
+  background-color: purple;
+  position: static;
 }
