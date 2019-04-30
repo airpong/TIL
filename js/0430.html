@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- JS 위치 1 -->
+
+</head>
+<body>
+    <h1>hello this in in body</h1>
+    <!-- JS 위치 2 -->
+    <script>
+        document.write('<h1>Hello, World!</h1>')
+        /*
+            This is
+            comment
+        */
+        //alert('Welcome to JS!')
+        // let word1 = '외안돼'
+        // word1 = '왜안되잉'
+        // document.write(word1)
+        // const word2 = '왜안돼'
+        // document.write(word2)
+        const firstName = "happy"
+        const lastName = "hacking"
+        const fullName = firstName + lastName
+
+        document.write('<h1>'+fullName + '!!' + '</h1>')
+        document.write(`<h1>${1+1}!!</h1>`)
+        console.log(`console : ${fullName}`)
+
+        // Python : user_name (snake_case)
+        // JS : userName (CamelCase)
+        const UserName = prompt("how are you?")
+        // if문
+        let message = ''
+        if (UserName === 'admin'){
+            message = '<h1>This is secret Admin page</h1>'
+        }
+        else if (UserName === 'nwith'){
+            message = '<h1>No water in the house?</h1>'
+        }
+        else {
+            message = `<h1>hello ${UserName}</h1>`
+        }
+        document.write(`<h1>${message}</h1>`)
+
+        /*
+        == vs ===
+        == : '값'만 비교 (ex. 0 == "0"는 true)
+        === : '값' & '타입' 비교 (ex . 0 === "0" false)
+        */
+
+        // 삼항 연산자
+        const number = 10
+        number === 10 ? document.write('number === 10') : document.write('number !== 10')
+
+        // 세미 클론 테스트
+        const a = 1
+        const b = 2
+        const c = a + b
+        (a+b).toString()
+        
+    </script>
+    
+</body>
+</html>
