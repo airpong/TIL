@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button id = "dog">click!</button>
+    <script>
+        const button = document.querySelector('#dog')
+        button.addEventListener('click',function(btn){
+            axios.get("131.125.249.144:8080/ssafy/gumi/1/posts") // Promise
+                .then(function (response) {
+                    // handle success
+                    console.log(response);
+                    return response.data.message
+                })
+        })
+        
+    </script>
+</body>
+</html>

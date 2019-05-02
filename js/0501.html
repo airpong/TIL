@@ -12,6 +12,7 @@
     </div>
         <button id="this-button">click me</button>
     <script>
+        document.innerHTML+="HEllo";
         /*
             Event Listener
             [무엇]을 [언제] [어떻게]한다.
@@ -20,7 +21,8 @@
        const button = document.querySelector('#this-button')
        button.addEventListener('click',function(evnet){
            const area = document.querySelector('#my')
-           area.innerHTML = '<h1>뿅</h1>'
+           area.innerHTML = '<h1>뿅</h1>';
+           area.appendChild("<h1>hello</h1>");
            
        })
     </script>
