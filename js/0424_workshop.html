@@ -8,18 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-    <button id = "dog">click!</button>
     <script>
-        const button = document.querySelector('#dog')
-        button.addEventListener('click',function(btn){
-            axios.get("131.125.249.144:8080/ssafy/gumi/1/posts") // Promise
-                .then(function (response) {
-                    // handle success
-                    console.log(response);
-                    return response.data.message
-                })
+        // 1. GET
+        const url = 'http://13.125.249.144:8080/ssafy/gumi/1/posts';
+        axios.get(url)
+            .then(function(response){
+                console.log(response.data);
+            })
+        // 2. POST
+        axios.post(url, {
+            post: {
+                title: 'Fred',
+                content: 'Flintstone',
+                author: 'me',
+            }
         })
-        
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     </script>
 </body>
 </html>
