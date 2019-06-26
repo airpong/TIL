@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .completed {
+            text-decoration:line-through;
+            opacity:0.6;
+        }
+        .red {
+            color:red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <select v-model='status'>
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="completed">Completed</option>
+        </select>
+        <ul>
+            <li v-for='todo in todosByStatus' v-bind:key='todo.id'>
+                <input type="checkbox" v-model='todo.completed'>
+                <!-- 1 -->
+                <!-- <span v-if='todo.completed' class = 'completed'>{{todo.content}}</span>
+                <span v-else>{{todo.content}}</span> -->
+                <!-- 2 -->
+                <!-- <span v-bind:class="todo.completed ? 'completed':''">{{todo.content}}</span> -->
+                <!-- 3 -->
+                <span v-bind:class="{completed : todo.completed, red : todo.completed}">{{todo.content}}</span>
+                
+            </li>
+            <!-- <div v-bind:style="{color : 'red', fontSize:'30px'}">
+                <span>Red Text, 30px</span>
+            </div> -->
+            <!-- v-on = addEventListener -->
+            
+        </ul>
+        <span>{{ reverseNewTodo }}</span>
+        <div>
+            <input type="text" v-model ='newTodo' v-on:keyup.enter='addTodo'>
+            <button v-on:click='addTodo'>+</button>
+        </div>
+        <div>
+            <button v-on:click='delTodo'>Clear Completed</button>
+        </div>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data :{
+                status : 'all',
+                newTodo : '',
+                todos:[
+                    
+                    {
+                        id : 1,
+                        content :'점심 메뉴 고민하기',
+                        completed:true,
+                    },
+                    {
+                        id : 2,
+                        content : '사다리 타기',
+                        completed:false,
+                    },
+                    {
+                        id : 3,
+                        content :'약속의 2시, 낮잠',
+                        completed:false,
+                    },
+                    {
+                        id : 4,
+                        content :'야자하기',
+                        completed:false,
+                    },
+                ],
+            },
+            methods :{
+                check : function(todo){
+                    todo.completed = !todo.completed;
+                },
+                addTodo : function(){
+                    if(this.newTodo !== '')
+                    {
+                        this.todos.push({
+                            id : Date.now(),
+                            content: this.newTodo,
+                            completed:false,
+                        });
+                        this.newTodo = '';
+                    }
+                   
+                },
+                delTodo : function(){
+                    this.todos = this.todos.filter(function(todo){
+                        return !todo.completed
+                    });
+                },
+            },
+            computed : {
+                reverseNewTodo : function() {
+                    return this.newTodo.split('').reverse().join('');
+                },
+                todosByStatus : function() {
+                    if(this.status === 'active'){
+                        return this.todos.filter((todo)=>{
+                            return !todo.completed
+                        })
+                    }
+                    if(this.status === 'completed'){
+                        return this.todos.filter((todo)=>{
+                            return todo.completed
+                        })
+                    }
+                    return this.todos
+                },
+            },
+        })
+    </script>
+</body>
+</html>
