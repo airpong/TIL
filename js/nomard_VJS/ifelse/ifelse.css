@@ -1,0 +1,12 @@
+h1 {
+    color: aqua;
+    transition: color .5s ease-in-out;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.color {
+    color: bisque;
+}
