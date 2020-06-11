@@ -9,8 +9,8 @@ const PENDING_LS = "pending"
 const FINISHIED_LS = "finished"
 
 const DeleteTodo = (event) => {
-    console.log(todosPending,todosFINISH)
     const node = event.target
+    console.log(node)
     const li = node.parentNode
     const targetul = li.parentNode
     let targetArray
@@ -20,6 +20,7 @@ const DeleteTodo = (event) => {
     else{
         targetArray = todosFINISH
     }
+    console.log("li",li)
     const targetIndex = (targetArray.findIndex(obj => obj.id === parseInt(li.className)))
     popEl = targetArray.splice(targetIndex,1)
     targetul.removeChild(li)
@@ -43,7 +44,7 @@ const gotoAnother = (event) => {
         targetArray = todosPending
         targetStroage = FINISHIED_LS
     }
-    addText(tmpEl[0].text,tmpEl.id,targetUl)
+    addText(tmpEl[0].text,tmpEl[0].id,targetUl)
     targetArray.push({
         text:tmpEl[0].text,
         id:tmpEl[0].id
@@ -82,3 +83,25 @@ const addToFending = (event) => {
 }
 
 todoForm.addEventListener("submit",addToFending)
+
+const init = () => {
+    const startPending = JSON.parse(localStorage.getItem(PENDING_LS))
+    startPending.forEach(el => {
+        todosPending.push({
+            text: el.text,
+            id : el.id
+        })
+        addText(el.text,el.id,"js-todoPending")
+    })
+    const startFinish = JSON.parse(localStorage.getItem(FINISHIED_LS))
+    startFinish.forEach(el => {
+        todosFINISH.push({
+            text: el.text,
+            id : el.id
+        })
+        addText(el.text,el.id,"js-todoFinish")
+    })
+    
+}
+
+init()

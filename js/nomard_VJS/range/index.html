@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Random Number Game</h1>
+    <h3>Generate a number between 0 and <span class="js-span-maxRange">100</span></h3>
+    
+    <input class="js-input-selectedNum" type="range" min="0" max="200" step="1" list="ticks">
+    
+    
+    <datalist id="ticks">
+        <option value="50"></option>
+        <option value="100"></option>
+        <option value="150"></option>
+        <option value="200"></option>
+    </datalist>
+    <h4>Guess the number:<span>
+        <input type="text" class="js-guessNum" placeholder="guess the number">
+        <button class="js-playbutton">Play!</button>
+    </span></h4>
+    <div class="hide" id="nochoicePage">
+        <h4>You have to choose Number</h4>
+    </div>
+    <div class="hide" id="resultPage">
+        <h4>You chose: <span class="js-chooseNum">93</span>,the machine chose: <span class="js-randomNum">35</span></h4>
+        <h3 class="js-h3-result">You won!</h3>
+        
+    </div>
+    
+    <div class="hide" id="outofrangePage">
+        <h4>Choosen number is out of range</h4>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
