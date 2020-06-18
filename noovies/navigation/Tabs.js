@@ -8,7 +8,8 @@ import Movies from "../screens/Movies";
 import { Platform } from "react-native";
 
 const Tabs = createBottomTabNavigator();
-const getHeaderName = (route) => route?.state?.routeNames[route?.state?.index];
+const getHeaderName = (route) =>
+  route?.state?.routeNames[route?.state?.index] || "Movie";
 export default ({ navigation, route }) => {
   useLayoutEffect(() => {
     const name = getHeaderName(route);
@@ -31,7 +32,6 @@ export default ({ navigation, route }) => {
           } else if (route.name === "Favorite") {
             iconName = iconName + "heart";
           }
-          console.log("abc", route);
           return (
             <Ionicons
               name={iconName}
