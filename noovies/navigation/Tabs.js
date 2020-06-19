@@ -11,6 +11,7 @@ const Tabs = createBottomTabNavigator();
 const getHeaderName = (route) =>
   route?.state?.routeNames[route?.state?.index] || "Movie";
 export default ({ navigation, route }) => {
+  console.log(navigation);
   useLayoutEffect(() => {
     const name = getHeaderName(route);
     navigation.setOptions({
@@ -29,7 +30,7 @@ export default ({ navigation, route }) => {
             iconName = iconName + "tv";
           } else if (route.name === "Search") {
             iconName = iconName + "search";
-          } else if (route.name === "Favorite") {
+          } else if (route.name === "Discovery") {
             iconName = iconName + "heart";
           }
           return (
@@ -52,7 +53,7 @@ export default ({ navigation, route }) => {
       <Tabs.Screen name="Movies" component={Movies} />
       <Tabs.Screen name="TV" component={Tv} />
       <Tabs.Screen name="Search" component={Search} />
-      <Tabs.Screen name="Favorite" component={favorite} />
+      <Tabs.Screen name="Discovery" component={favorite} />
     </Tabs.Navigator>
   );
 };
