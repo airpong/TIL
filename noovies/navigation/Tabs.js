@@ -9,9 +9,8 @@ import { Platform } from "react-native";
 
 const Tabs = createBottomTabNavigator();
 const getHeaderName = (route) =>
-  route?.state?.routeNames[route?.state?.index] || "Movie";
+  route.state?.routeNames[route.state?.index] || "Movie";
 export default ({ navigation, route }) => {
-  console.log(navigation);
   useLayoutEffect(() => {
     const name = getHeaderName(route);
     navigation.setOptions({
@@ -23,7 +22,6 @@ export default ({ navigation, route }) => {
     <Tabs.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused }) => {
-          console.log(focused);
           let iconName = Platform.OS === "ios" ? "ios-" : "md-";
           if (route.name === "Movies") {
             iconName = iconName + "film";
