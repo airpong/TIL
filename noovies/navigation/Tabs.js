@@ -20,27 +20,29 @@ export default ({ navigation, route }) => {
 
   return (
     <Tabs.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused }) => {
-          let iconName = Platform.OS === "ios" ? "ios-" : "md-";
-          if (route.name === "Movies") {
-            iconName = iconName + "film";
-          } else if (route.name === "TV") {
-            iconName = iconName + "tv";
-          } else if (route.name === "Search") {
-            iconName = iconName + "search";
-          } else if (route.name === "Discovery") {
-            iconName = iconName + "heart";
-          }
-          return (
-            <Ionicons
-              name={iconName}
-              color={focused ? "white" : "grey"}
-              size={30}
-            />
-          );
-        },
-      })}
+      screenOptions={({ route }) => {
+        return {
+          tabBarIcon: ({ focused }) => {
+            let iconName = Platform.OS === "ios" ? "ios-" : "md-";
+            if (route.name === "Movies") {
+              iconName = iconName + "film";
+            } else if (route.name === "TV") {
+              iconName = iconName + "tv";
+            } else if (route.name === "Search") {
+              iconName = iconName + "search";
+            } else if (route.name === "Discovery") {
+              iconName = iconName + "heart";
+            }
+            return (
+              <Ionicons
+                name={iconName}
+                color={focused ? "white" : "grey"}
+                size={30}
+              />
+            );
+          },
+        };
+      }}
       tabBarOptions={{
         showLabel: false,
         style: {

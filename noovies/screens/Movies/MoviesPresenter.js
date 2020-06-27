@@ -56,7 +56,6 @@ export default (movies) => {
               />
             ))}
           </HorizontalSlider>
-
           <List title="Comming Soon">
             {movies.upcoming.map((movie) => (
               <Horizontal
