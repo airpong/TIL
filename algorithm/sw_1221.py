@@ -1,6 +1,7 @@
 casesize = int(input())
 for i in range(casesize):
     dic = {"ZRO":0,"ONE":0,"TWO":0,"THR":0,"FOR":0,"FIV":0,"SIX":0,"SVN":0,"EGT":0,"NIN":0}
+    print(dic)
     line = input().split()
     size = int(line[1])
     count = 0
