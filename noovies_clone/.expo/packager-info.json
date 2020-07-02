@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 4863,
+  "packagerPid": 10437,
   "webpackServerPort": 19006,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://hv-2rv.anonymous.noovies-clone.exp.direct",
+  "packagerNgrokUrl": "https://packager.hv-2rv.anonymous.noovies-clone.exp.direct",
+  "ngrokPid": 10492
 }

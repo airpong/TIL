@@ -1,49 +1,44 @@
 import React, { useState } from "react";
-import { View, Image } from "react-native";
-import styled from "styled-components/native";
-import { NavigationContainer } from "@react-navigation/native";
-
 import { AppLoading } from "expo";
-import TabNavi from "./nav/Tab";
+import * as Font from "expo-font";
+import { Image, StatusBar } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { Asset } from "expo-asset";
+import { Ionicons } from "@expo/vector-icons";
+import Stack from "./navigation/Stack";
 
-const Container = styled.View`
-  flex: 1;
-  background-color: black;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Text = styled.Text`
-  color: white;
-`;
-
-const cacheImages = (images) => {
-  return images.map((image) => {
+const cacheImages = (images) =>
+  images.map((image) => {
     if (typeof image === "string") {
       return Image.prefetch(image);
     } else {
       return Asset.fromModule(image).downloadAsync();
     }
   });
-};
+
+const cacheFonts = (fonts) =>
+  fonts.map((font) => {
+    return [Font.loadAsync(font), Font.loadAsync(font), Font.loadAsync(font)];
+  });
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
-
-  const onFinish = () => setIsReady(true);
-
   const loadAssets = () => {
-    const imageAssets = cacheImages([
-      "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    const images = cacheImages([
+      "https://images.unsplash.com/photo-1592194850468-e42df770454b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1571847140471-1d7766e825ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=973&q=80",
+      require("./assets/splash.png"),
     ]);
-    Promise.all([...imageAssets]);
+    const fonts = cacheFonts([Ionicons.font]);
+    return Promise.all([...images, ...fonts]);
   };
-
+  const onFinish = () => setIsReady(true);
   return isReady ? (
     <>
       <NavigationContainer>
-        <TabNavi />
+        <Stack />
       </NavigationContainer>
+      <StatusBar barStyle="light-content" />
     </>
   ) : (
     <AppLoading

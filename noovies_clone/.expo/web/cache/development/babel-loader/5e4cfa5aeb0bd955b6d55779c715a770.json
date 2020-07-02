@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Container from \"./TvContainer\";\nexport default Container;","map":{"version":3,"sources":["/Users/macbookpro/hcu/TIL/noovies_clone/screens/Tv/index.js"],"names":["Container"],"mappings":"AAAA,OAAOA,SAAP;AACA,eAAeA,SAAf","sourcesContent":["import Container from \"./TvContainer\";\nexport default Container;\n"]},"metadata":{},"sourceType":"module"}
