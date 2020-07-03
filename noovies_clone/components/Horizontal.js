@@ -6,6 +6,7 @@ import Votes from "./Votes";
 import { apiImage } from "../api";
 import { trimText, dateLocal } from "../utils";
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Container = styled.View`
   padding: 0px 30px;
@@ -33,8 +34,12 @@ const Overview = styled.Text`
   color: white;
 `;
 const Horizontal = ({ id, title, releaseDate, poster, overview }) => {
+  const navigation = useNavigation();
+  const onClick = () => {
+    navigation.navigate("Detail", { id });
+  };
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onClick}>
       <Container>
         <Poster url={poster} />
         <Data>
