@@ -58,7 +58,13 @@ const ButtonText = styled.Text``;
 const Slide = ({ id, title, backgroundImage, votes, overview, poster }) => {
   const navigation = useNavigation();
   const onClick = () => {
-    navigation.navigate("Detail", { id });
+    navigation.navigate("Detail", {
+      id,
+      title,
+      backgroundImage,
+      overview,
+      poster,
+    });
   };
   return (
     <Container>

@@ -33,10 +33,17 @@ const Overview = styled.Text`
   margin-top: 10px;
   color: white;
 `;
-const Horizontal = ({ id, title, releaseDate, poster, overview }) => {
+const Horizontal = ({
+  isTv = false,
+  id,
+  title,
+  releaseDate,
+  poster,
+  overview,
+}) => {
   const navigation = useNavigation();
   const onClick = () => {
-    navigation.navigate("Detail", { id });
+    navigation.navigate("Detail", { isTv, id, title, poster, overview });
   };
   return (
     <TouchableOpacity onPress={onClick}>
