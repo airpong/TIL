@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Button } from "react-native";
-import { movieApi } from "../api";
+import FavsPresenter from "./FavPresenter";
+import { movieApi } from "../../api";
 export default () => {
   const [movies, setMovies] = useState({
-    result: [],
+    results: [],
     error: null,
   });
   const getData = async () => {
@@ -17,9 +17,5 @@ export default () => {
   useEffect(() => {
     getData();
   }, []);
-  return (
-    <View>
-      <Text>{movies.results?.length}</Text>
-    </View>
-  );
+  return <FavsPresenter {...movies} />;
 };
