@@ -1,0 +1,59 @@
+{
+  "GnModelRestaurantDesignate": {
+    "list_total_count": 762,
+    "RESULT": { "CODE": "INFO-000", "MESSAGE": "정상 처리되었습니다" },
+    "row": [
+      {
+        "CGG_CODE": "3220000",
+        "ASGN_YY": "2016",
+        "ASGN_SNO": "0152",
+        "APPL_YMD": "20161125",
+        "ASGN_YMD": "20161125",
+        "UPSO_NM": "진배족발",
+        "SITE_ADDR_RD": "서울특별시 강남구 언주로173길 19, (신사동,지상2층)",
+        "SITE_ADDR": "서울특별시 강남구 신사동  619번지 6호  지상2층",
+        "PERM_NT_NO": "3220000-101-2008-00062",
+        "SNT_UPTAE_NM": "한식",
+        "MAIN_EDF": "족발",
+        "TRDP_AREA": 108.33,
+        "ADMDNG_NM": "압구정동",
+        "GRADE_FACIL_GBN": "상수도전용",
+        "UPSO_SITE_TELNO": "02  34459211"
+      },
+      {
+        "CGG_CODE": "3220000",
+        "ASGN_YY": "2016",
+        "ASGN_SNO": "0152",
+        "APPL_YMD": "20161125",
+        "ASGN_YMD": "20161125",
+        "UPSO_NM": "진배족발",
+        "SITE_ADDR_RD": "서울특별시 강남구 언주로173길 19, (신사동,지상2층)",
+        "SITE_ADDR": "서울특별시 강남구 신사동  619번지 6호  지상2층",
+        "PERM_NT_NO": "3220000-101-2008-00062",
+        "SNT_UPTAE_NM": "한식",
+        "MAIN_EDF": "족발",
+        "TRDP_AREA": 108.33,
+        "ADMDNG_NM": "압구정동",
+        "GRADE_FACIL_GBN": "상수도전용",
+        "UPSO_SITE_TELNO": "02  34459211"
+      },
+      {
+        "CGG_CODE": "3220000",
+        "ASGN_YY": "2014",
+        "ASGN_SNO": "0160",
+        "APPL_YMD": "20141006",
+        "ASGN_YMD": "20141006",
+        "UPSO_NM": "이도곰탕",
+        "SITE_ADDR_RD": "서울특별시 강남구 논현로94길 29-5, (역삼동,지상1층)",
+        "SITE_ADDR": "서울특별시 강남구 역삼동  671번지 17호  지상1층",
+        "PERM_NT_NO": "3220000-101-2001-24197",
+        "SNT_UPTAE_NM": "한식",
+        "MAIN_EDF": "곰탕",
+        "TRDP_AREA": 194.41,
+        "ADMDNG_NM": "역삼1동",
+        "GRADE_FACIL_GBN": "상수도전용",
+        "UPSO_SITE_TELNO": "02 5010738"
+      }
+    ]
+  }
+}
