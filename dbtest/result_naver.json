@@ -1,0 +1,207 @@
+{
+  "result": {
+    "type": "place",
+    "metaInfo": {
+      "pageId": "UwdgBwpy8cv/JdHZbsl-229060",
+      "sessionId": "+sxRihvDLoYYssVhOYXO8Q==",
+      "rcode": "02465102",
+      "searchedQuery": "퀴즈노스 압구정점",
+      "correction": null,
+      "displayCorrectAnswer": true
+    },
+    "address": null,
+    "place": {
+      "page": 1,
+      "totalCount": 1,
+      "boundary": [
+        "127.0244750",
+        "37.5249333",
+        "127.0244750",
+        "37.5249333"
+      ],
+      "feedback": [
+        "경기도 용인시 수지구",
+        " 중심으로 <strong>'퀴즈노스 압구정점'</strong>"
+      ],
+      "options": {
+        "sort": "0",
+        "toggleLocation": "0",
+        "rank": "1"
+      },
+      "filters": {
+        
+      },
+      "reSearch": {
+        "displayMsg": "압구정 근처 퀴즈노스 검색하기",
+        "params": {
+          "query": "퀴즈노스 압구정점",
+          "queryRank": "2"
+        },
+        "move": {
+          "params": {
+            "query": "퀴즈노스 압구정점",
+            "queryRank": "1"
+          }
+        },
+        "link": {
+          "displayMsg": "압구정 근처 퀴즈노스 검색하기",
+          "params": {
+            "query": "퀴즈노스 압구정점",
+            "queryRank": "2"
+          }
+        }
+      },
+      "isSiteSortAvailable": false,
+      "specializedSearch": null,
+      "hasPollingPlace": false,
+      "isAdultKeyword": false,
+      "containAdultContents": false,
+      "address": null,
+      "brandPromotion": null,
+      "list": [
+        {
+          "index": "0",
+          "rank": "1",
+          "id": "13150293",
+          "name": "퀴즈노스 압구정점",
+          "tel": "02-3443-3332",
+          "isCallLink": false,
+          "virtualTel": "",
+          "ppc": "1",
+          "category": [
+            "음식점",
+            "샌드위치"
+          ],
+          "categoryPath": [
+            [
+              "220036",
+              "220044",
+              "220137",
+              "221000"
+            ],
+            [
+              "222606",
+              "222607",
+              "1004452"
+            ]
+          ],
+          "address": "서울특별시 강남구 신사동 574 한주빌딩 1F",
+          "roadAddress": "서울특별시 강남구 압구정로 144 한주빌딩",
+          "abbrAddress": "신사동 574 한주빌딩 1F",
+          "shortAddress": [
+            "서울 강남구",
+            "압구정로 144",
+            "한주빌딩"
+          ],
+          "display": "<b>퀴즈노스 압구정점</b>",
+          "telDisplay": "02-3443-3332",
+          "context": [
+            "샌드위치",
+            "치킨",
+            "피자"
+          ],
+          "reviewCount": 50,
+          "ktCallMd": "1fdee774c7ce4e9d34e98df2bdaedb78",
+          "coupon": "0",
+          "thumUrl": "http://ldb.phinf.naver.net/20150831_76/1440994644934IQE3B_JPEG/106470458853266_0.jpg",
+          "type": "s",
+          "isSite": "1",
+          "posExact": "1",
+          "x": "127.0244750",
+          "y": "37.5249333",
+          "itemLevel": "12",
+          "isAdultBusiness": false,
+          "streetPanorama": {
+            "id": "Cpb8/4rBArT5Kx8IrJc+tA==",
+            "pan": "134.41",
+            "tilt": "10.00",
+            "lng": "127.0243389",
+            "lat": "37.5250663",
+            "fov": "120"
+          },
+          "skyPanorama": {
+            "id": "+rtBHUj8VZBoC+3iCGVm4A==",
+            "pan": "-175.29",
+            "tilt": "-30.00",
+            "lng": "127.0245972",
+            "lat": "37.5263901",
+            "fov": "124"
+          },
+          "insidePanorama": null,
+          "interiorPanorama": null,
+          "indoorPanorama": null,
+          "theme": null,
+          "poiInfo": {
+            "relation": null,
+            "hasRelation": false,
+            "road": {
+              "poiShapeType": "1",
+              "shapeKey": null,
+              "boundary": null,
+              "detail": null
+            },
+            "hasRoad": false,
+            "land": null,
+            "hasLand": false,
+            "polygon": null,
+            "hasPolygon": false
+          },
+          "homePage": "http://www.quiznos.co.kr/",
+          "description": "",
+          "entranceCoords": {
+            "car": [
+              {
+                "rep": true,
+                "x": 127.024685,
+                "y": 37.524839
+              }
+            ],
+            "walk": [
+              {
+                "rep": true,
+                "x": 127.024515,
+                "y": 37.524867
+              }
+            ]
+          },
+          "isPollingPlace": false,
+          "bizhourInfo": "매일 07:30~22:00 동절기 08:00 오픈",
+          "menuInfo": "트레디셔널(R) 샌드위치 5,700 | 이탈리안(R) 샌드위치 5,700 | 더블 베이컨 비엘티(R) 샌드위치 5,700 | 리코타 베지 & 아보카도(R) 샌드위치 5,700 | 치폴레 쉬림프(R) 샌드위치 6,400 | 코리안 트레디셔널(R) 샌드위치 6,400 | 더블 치즈 스테이크(R) 샌드위치 7,500 | 제스티 그릴드 스테이크(R) 샌드위치 7,700 | 블랙 앵거스 스테이크(R) 샌드위치 8,200 | 치킨 까르보나라(R) 샌드위치 6,300 | 치킨 베이컨 랜치(R) 샌드위치 6,300 | 허니 머스타드 치킨(R) 샌드위치 6,300 | 크레이지 핫 치킨(R) 샌드위치 6,300 | 터키 랜치 스위스(R) 샌드위치 6,300 | 터키 & 아보카도(R) 샌드위치 6,300 | 햄&치즈(R) 샌드위치 4,500 | 씨푸드 클래식(R) 샌드위치 4,500 | 스파이시 햄(R) 샌드위치 4,500 | 컨츄리 프렌치 치킨 브레드볼 스프 6,300 | 보스톤 클램 차우더 브레드볼 스프 6,300 | 씨푸드 샐러드 6,500 | 이탈리안 샐러드 6,500 | 허니 리코타 치즈 샐러드 7,500 | 코리안 트레디셔널 피자 7,900 | 까로보나라 피자 7,900 | 아메리카노 3,200 | 카페라떼 4,000 | 카푸치노 4,000",
+          "petrolInfo": null,
+          "couponUrl": null,
+          "couponUrlMobile": null,
+          "hasCardBenefit": false,
+          "menuExist": "1",
+          "hasNaverBooking": false,
+          "naverBookingUrl": "",
+          "naverEasyOrderUrl": null,
+          "hasNaverSmartOrder": false,
+          "reservationLabel": {
+            "standard": false,
+            "preOrder": false,
+            "table": false,
+            "takeout": false
+          },
+          "hasBroadcastInfo": false,
+          "broadcastInfo": null,
+          "shopWindowInfo": null,
+          "hasNPay": false,
+          "carWash": "",
+          "parkingPrice": "-1",
+          "card": "",
+          "distance": "23153.65",
+          "marker": "nres://marker/00063-00076",
+          "markerSelected": "nres://marker/00063-00230",
+          "microReview": [
+            
+          ],
+          "michelinGuide": null,
+          "indoor": null,
+          "markerLabel": null,
+          "subway": null
+        }
+      ]
+    },
+    "bus": null
+  }
+}
