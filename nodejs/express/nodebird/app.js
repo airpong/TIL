@@ -4,11 +4,17 @@ const morgan = require("morgan");
 const path = require("path");
 const session = require("express-session");
 const flash = require("connect-flash");
+const passport = require("passport");
+const cors = require("cors");
 require("dotenv").config();
 
 const pageRouter = require("./routes/page");
+const authRouter = require("./routes/auth");
+const { sequelize } = require("./models");
+const passportConfig = require("./passport");
 
 const app = express();
+sequelize.sync();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -30,10 +36,21 @@ app.use(
     },
   })
 );
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.use(flash());
+require("./passport")(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/", pageRouter);
-
+app.use("/auth", authRouter);
 app.use((req, res, next) => {
   const err = new Error("Not Found");
   err.status = 404;
