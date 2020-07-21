@@ -23,53 +23,51 @@ const Container = styled.View``;
 export default ({ refreshFn, loading, nowPlaying, popular, upcoming }) => {
   return (
     <ScrollContainer refreshFn={refreshFn} loading={loading}>
-      <>
-        <SliderContainer>
-          <Swiper controlsEnabled={false} loop timeout={3}>
-            {nowPlaying.map((movie) => {
-              if (movie.backdrop_path === null) {
-                movie.backdrop_path = movie.poster_path;
-              }
-              return (
-                <Slide
-                  key={movie.id}
-                  id={movie.id}
-                  title={movie.title}
-                  overview={movie.overview}
-                  votes={movie.vote_average}
-                  backgroundImage={movie.backdrop_path}
-                  poster={movie.poster_path}
-                />
-              );
-            })}
-          </Swiper>
-        </SliderContainer>
-        <Container>
-          <HorizontalSlider title={"Popular Movies"}>
-            {popular.map((movie) => (
-              <Vertical
-                id={movie.id}
-                key={movie.id}
-                poster={movie.poster_path}
-                title={movie.original_title}
-                votes={movie.vote_average}
-              />
-            ))}
-          </HorizontalSlider>
-          <List title="Comming Soon">
-            {upcoming.map((movie) => (
-              <Horizontal
+      <SliderContainer>
+        <Swiper controlsEnabled={false} loop timeout={3}>
+          {nowPlaying.map((movie) => {
+            if (movie.backdrop_path === null) {
+              movie.backdrop_path = movie.poster_path;
+            }
+            return (
+              <Slide
                 key={movie.id}
                 id={movie.id}
                 title={movie.title}
-                releaseDate={movie.release_date}
-                poster={movie.poster_path}
                 overview={movie.overview}
+                votes={movie.vote_average}
+                backgroundImage={movie.backdrop_path}
+                poster={movie.poster_path}
               />
-            ))}
-          </List>
-        </Container>
-      </>
+            );
+          })}
+        </Swiper>
+      </SliderContainer>
+      <Container>
+        <HorizontalSlider title={"Popular Movies"}>
+          {popular.map((movie) => (
+            <Vertical
+              id={movie.id}
+              key={movie.id}
+              poster={movie.poster_path}
+              title={movie.original_title}
+              votes={movie.vote_average}
+            />
+          ))}
+        </HorizontalSlider>
+        <List title="Comming Soon">
+          {upcoming.map((movie) => (
+            <Horizontal
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              releaseDate={movie.release_date}
+              poster={movie.poster_path}
+              overview={movie.overview}
+            />
+          ))}
+        </List>
+      </Container>
     </ScrollContainer>
   );
 };
