@@ -1,34 +1,28 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-import SockJS from "sockjs-client";
-import Stomp from "stompjs";
-// let sockJS = new SockJS("http://localhost:8080/ws");
-let sockJS = new WebSocket("http://localhost:8080/ws/");
-let stompClient = Stomp.client(sockJS);
-stompClient.debug = () => {
-  "abab";
-};
-const click = () => {
-  console.log("haha");
-  stompClient.connect(
-    {
-      abc: "bbb",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTk2MDEyMzY4LCJleHAiOjE1OTY4NzYzNjh9.8Cw6UfG74hSq2Y21GYUxMVq3-Eb_SY7QUhEQuwYggHhAzVDvs5M_bEvls9ZwphQoMaqAD0INmQ9r6WVXm-Lx2w",
-    },
-    () => {
-      console.log("connect!!");
-    }
-  );
-};
+import io from "socket.io-client";
 
+// const socket = io(
+//   "http://ec2-13-125-2-123.ap-northeast-2.compute.amazonaws.com:8001"
+// );
+// socket.emit("position", "127.555 37.555");
+// socket.on("chat message", (msg) => {
+//   console.log(msg);
+// });
+const socket = io("http://localhost:8001");
+// socket.emit("chat message", "126.555 27.555");
+// socket.on("chat message", (msg) => {
+//   console.log(msg);
+// });
+socket.emit("private message", "1");
+socket.on("private message", (msg) => {
+  console.log(msg);
+});
 export default function App() {
   return (
     <View style={styles.container}>
-      <Button title={"hh"} onPress={click}></Button>
+      <Button title={"hh"}></Button>
       <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }

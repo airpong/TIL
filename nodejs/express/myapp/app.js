@@ -5,10 +5,11 @@ const path = require("path");
 const http = require("http");
 const session = require("express-session");
 require("dotenv").config();
-
+const rq = require("request");
 const app = express();
 const server = http.createServer(app);
-var io = require("socket.io")(server);
+const io = require("socket.io")(server);
+
 app.set("port", process.env.PORT || 8001);
 
 app.use(morgan("dev"));
@@ -29,24 +30,23 @@ app.use("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 io.on("connection", (socket) => {
+  socket.join("1");
   console.log("a user connected");
-  socket.on("chat message", (msg) => {
-    console.log("Message : ", msg);
-    io.emit("chat message", msg);
+  // socket.on("chat message", (msg) => {
+  //   console.log("Message : ", msg);
+  //   io.emit("chat message", `Message From server : ${msg}`);
+  // });
+  socket.on("private message", async (msg) => {
+    console.log("이게 먼저");
+    let userResult;
+    const result = await rq.get("http://www.google.co.kr", () => {
+      userResult = "결과 입니다";
+      console.log(userResult);
+      socket.to(msg).emit("private message", `private message : ${userResult}`);
+    });
   });
 });
-// app.use((req, res, next) => {
-//   const err = new Error("Not Found");
-//   err.status = 404;
-//   next(err);
-// });
-// app.use((err, req, res, next) => {
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get("env") === "development" ? err : {};
-//   res.status(err.status || 500);
-//   res.render("error");
-// });
 
 server.listen(app.get("port"), () => {
-  console.log("listening on *:3000");
+  console.log("listening on ", app.get("port"));
 });
