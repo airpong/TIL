@@ -1,12 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
-const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
+import { StyleSheet, Text, View, Dimensions, TextInput } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <View styleds={styles.box}></View>
+      <View style={styles.textContainer}>
+        <Text>닉네임 : </Text>
+        <Text style={{}}>Hello</Text>
+        <View style={{ flexDirection: "row" }}></View>
+        <View
+          style={{
+            borderWidth: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            width: 20,
+            height: 20,
+            borderRadius: 20,
+            marginLeft: 10,
+          }}
+        >
+          <AntDesign style={{}} name="edit" size={15} color="black" />
+        </View>
+      </View>
     </View>
   );
 }
@@ -14,15 +30,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexWrap: "wrap",
-    backgroundColor: "#fff",
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
+    padding: 50,
   },
-  box: {
-    width: WIDTH / 3,
-    height: WIDTH / 3,
-    marginHorizontal: 10,
-    backgroundColor: "cyan",
+  textContainer: {
+    flexDirection: "row",
+
+    justifyContent: "center",
   },
 });
