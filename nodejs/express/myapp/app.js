@@ -9,7 +9,7 @@ const rq = require("request");
 const app = express();
 const server = http.createServer(app);
 const io = require("socket.io")(server);
-
+const users = [];
 app.set("port", process.env.PORT || 8001);
 
 app.use(morgan("dev"));
@@ -30,19 +30,23 @@ app.use("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 io.on("connection", (socket) => {
-  socket.join("1");
+  socket.join(socket.handshake.query.id);
   console.log("a user connected");
-  // socket.on("chat message", (msg) => {
-  //   console.log("Message : ", msg);
-  //   io.emit("chat message", `Message From server : ${msg}`);
-  // });
-  socket.on("private message", async (msg) => {
-    console.log("이게 먼저");
-    let userResult;
-    const result = await rq.get("http://www.google.co.kr", () => {
-      userResult = "결과 입니다";
-      console.log(userResult);
-      socket.to(msg).emit("private message", `private message : ${userResult}`);
+  const { id, email, JWT, name, imageUrl } = socket.handshake.query;
+  const socketID = socket.id;
+  users.push({ id, email, JWT, name, imageUrl, socketID });
+
+  socket.on("together", (msg) => {
+    socket.emit("together", users);
+  });
+  socket.on("togetherInvite", (msg) => {
+    socket.emit("togetherInvite", { roomName: `${msg[0]}Room`, users: users });
+    msg.map((user) => {
+      console.log(user);
+      socket.to(user).emit("inviteAccept", {
+        roomName: `${msg.id}Room`,
+        hostName: "하창언",
+      });
     });
   });
 });
