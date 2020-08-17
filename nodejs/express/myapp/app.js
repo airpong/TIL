@@ -10,6 +10,7 @@ const app = express();
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 const users = [];
+let tmpVar = 1;
 app.set("port", process.env.PORT || 8001);
 
 app.use(morgan("dev"));
@@ -29,6 +30,7 @@ app.use(function (req, res, next) {
 app.use("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
+
 io.on("connection", (socket) => {
   socket.join(socket.handshake.query.id);
   console.log("a user connected");
@@ -36,18 +38,71 @@ io.on("connection", (socket) => {
   const socketID = socket.id;
   users.push({ id, email, JWT, name, imageUrl, socketID });
 
-  socket.on("together", (msg) => {
-    socket.emit("together", users);
+  socket.on("together", (msg, fn) => {
+    console.log(msg);
+    fn(
+      JSON.stringify({
+        aroundUsers: [
+          {
+            id: 1,
+            socketId: "abc",
+            name: "하창언",
+            imageUrl:
+              "https://vpgrealty.ca/wp-content/uploads/2016/06/eric-agent-profile-image.jpg",
+          },
+          {
+            id: 2,
+            socketId: "bcd",
+            name: "정성훈",
+            imageUrl: "https://pbs.twimg.com/media/EWRXyp_UcAMHCPe.jpg",
+          },
+          {
+            id: 3,
+            socketId: "efg",
+            name: "노영삼",
+            imageUrl:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNmTX740wIiJiqu3yNYd2V6TR6R9C6H5KdUA&usqp=CAU",
+          },
+          {
+            id: 4,
+            socketId: "zfe",
+            name: "김영호",
+            imageUrl:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBb_vSO5GUg9-PyG4EkhPvYp9VcDj1PBZHUA&usqp=CAU",
+          },
+        ],
+      })
+    );
   });
-  socket.on("togetherInvite", (msg) => {
-    socket.emit("togetherInvite", { roomName: `${msg[0]}Room`, users: users });
-    msg.map((user) => {
-      console.log(user);
-      socket.to(user).emit("inviteAccept", {
-        roomName: `${msg.id}Room`,
-        hostName: "하창언",
-      });
-    });
+  socket.on("togetherInvite", (msg, fn) => {
+    console.log(msg);
+    fn("togetherInvite msg from server");
+  });
+  socket.on("gameStart", (msg, fn) => {
+    console.log(msg);
+    fn("gameStart msg from server");
+  });
+  socket.on("gameUserFinish", (msg, fn) => {
+    console.log(msg);
+    fn("gameUserFinish msg from server");
+  });
+  // setTimeout(() => {
+  //   console.log("setTimeout func");
+  //   io.emit("gameAllFinish", "gameAllFinish msg from server");
+  // }, 4000);
+  // setTimeout(() => {
+  //   console.log("setTimeout func");
+  //   io.emit("gameRoomUpdate", "gameRoomUpdate msg from server");
+  // }, 4000);
+
+  socket.on("tmp", (msg) => {
+    console.log(msg + "hello");
+  });
+  // socket.emit("gameRoomUpdate", "gameRoomUpdate msg from server");
+
+  socket.on("disconnect", (reason) => {
+    console.log("disconnect");
+    console.log(reason);
   });
 });
 
