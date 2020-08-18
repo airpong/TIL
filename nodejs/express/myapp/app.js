@@ -76,7 +76,20 @@ io.on("connection", (socket) => {
   });
   socket.on("togetherInvite", (msg, fn) => {
     console.log(msg);
-    fn("togetherInvite msg from server");
+    fn(
+      JSON.stringify({
+        roomName: "room1",
+        gameRoomUserList: [
+          {
+            id: 2,
+            name: "하창언",
+            imageUrl:
+              "https://lh6.googleusercontent.com/-aoBY_gzGubw/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucl3d9g2shwPeopi8H1s1synQa4jAA/photo.jpg",
+          },
+        ],
+        hostId: 2,
+      })
+    );
   });
   socket.on("gameStart", (msg, fn) => {
     console.log(msg);
