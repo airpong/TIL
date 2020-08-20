@@ -30,12 +30,151 @@ app.use(function (req, res, next) {
 app.use("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-
+const dummyRestaurant = [
+  {
+    address: "서울특별시 마포구 합정동 368-3",
+    categories: "카페",
+    googleId: null,
+    googleRating: null,
+    googleReviewCount: 0,
+    id: 16,
+    latitude: 37.5457138,
+    longitude: 126.9150015,
+    menuList: [],
+    name: "빈브라더스 합정",
+    naverId: 35431552,
+    openingHours: "매일 11:00~22:30",
+    phoneNumber: null,
+    priceLevel: 0,
+    roadAddress: "서울특별시 마포구 토정로 35-1",
+    thumUrl:
+      "http://ldb.phinf.naver.net/20160726_155/1469502303512PLBDt_JPEG/176676523522287_0.jpeg",
+  },
+  {
+    address: "서울특별시 마포구 합정동 372-17",
+    categories: "일식",
+    googleId: null,
+    googleRating: null,
+    googleReviewCount: 0,
+    id: 15,
+    latitude: 37.5472597,
+    longitude: 126.9143486,
+    menuList: [],
+    name: "시오",
+    naverId: 1605124064,
+    openingHours:
+      "평일 11:30~21:30 크로스타임3시~5시 | 주말 11:30~21:30 크로스타임3:30~5시",
+    phoneNumber: null,
+    priceLevel: 0,
+    roadAddress: "서울특별시 마포구 독막로2길 30 1층",
+    thumUrl:
+      "http://ldb.phinf.naver.net/20190412_124/1555050716829bIJFR_JPEG/6g5CPH9rHWZ6SOar3Kj0TNQ6.jpg",
+  },
+  {
+    address: "서울특별시 마포구 합정동 386-37",
+    categories: "카페",
+    googleId: null,
+    googleRating: null,
+    googleReviewCount: 0,
+    id: 14,
+    latitude: 37.5513266,
+    longitude: 126.9109364,
+    menuList: [],
+    name: "마담티라미수",
+    naverId: 1132863024,
+    openingHours: "매일 09:00~23:00 추석당일 / 1월 1일 휴무",
+    phoneNumber: null,
+    priceLevel: 0,
+    roadAddress: "서울특별시 마포구 양화로3길 55",
+    thumUrl:
+      "http://ldb.phinf.naver.net/20180315_199/1521082296807CfoWa_PNG/IYGMb4j9HaMisFfdbSzJW1fb.PNG.png",
+  },
+  {
+    address: "서울특별시 마포구 합정동 473",
+    categories: "세계음식",
+    googleId: null,
+    googleRating: null,
+    googleReviewCount: 0,
+    id: 13,
+    latitude: 37.5510986,
+    longitude: 126.9118854,
+    menuList: [],
+    name: "감성타코합정점",
+    naverId: 625311806,
+    openingHours: "평일 11:30~10:00 LO 21:00 | 주말 12:00~10:00 LO 21:00",
+    phoneNumber: null,
+    priceLevel: 0,
+    roadAddress: "서울특별시 마포구 월드컵로3길 14",
+    thumUrl:
+      "http://ldb.phinf.naver.net/20170501_273/1493630341977BdrFA_JPEG/186451584920764_0.jpeg",
+  },
+  {
+    address: "서울특별시 마포구 합정동 473",
+    categories: "양식",
+    googleId: null,
+    googleRating: null,
+    googleReviewCount: 0,
+    id: 12,
+    latitude: 37.5506613,
+    longitude: 126.9119047,
+    menuList: [],
+    name: "콘크리트 엔젤",
+    naverId: 1634128388,
+    openingHours:
+      "월요일 09:30~20:00 브레이크 타임 15:30-17:00 | 수요일 09:30~20:00 브레이크 타임 15:30-17:00 | 목요일 09:30~20:00 브레이크 타임 15:30-17:00 | 금요일 09:30~20:00 브레이크 타임 15:30-17:00 | 주말 09:30~20:00 브레이크 타임 15:30-17:00",
+    phoneNumber: null,
+    priceLevel: 0,
+    roadAddress:
+      "서울특별시 마포구 월드컵로3길 14 마포한강푸르지오2차상가 1층 103,104호",
+    thumUrl:
+      "http://ldb.phinf.naver.net/20191009_111/1570610320593RhVC3_JPEG/rBkXgYd3_OTZHfDwyPOWGG2W.jpg",
+  },
+  {
+    address: "서울특별시 마포구 합정동 392-1",
+    categories: "일식,주점",
+    googleId: null,
+    googleRating: null,
+    googleReviewCount: 0,
+    id: 11,
+    latitude: 37.5501382,
+    longitude: 126.9102718,
+    menuList: [],
+    name: "카에루",
+    naverId: 37286386,
+    openingHours: "매일 18:00~03:00 | 일요일 휴무",
+    phoneNumber: null,
+    priceLevel: 0,
+    roadAddress: "서울특별시 마포구 양화로1길 31 우진빌딩",
+    thumUrl:
+      "http://ldb.phinf.naver.net/20200525_7/1590413694520TtLPg_JPEG/FTvDUOgNcTT83b0ftVDLm_Yf.jpg",
+  },
+  {
+    address: "서울특별시 마포구 합정동 357-6",
+    categories: "카페",
+    googleId: null,
+    googleRating: null,
+    googleReviewCount: 0,
+    id: 10,
+    latitude: 37.5458323,
+    longitude: 126.9184372,
+    menuList: [],
+    name: "앤트러사이트 합정점",
+    naverId: 13316501,
+    openingHours: "매일 09:00~23:00 일~금 | 토요일 09:00~24:00",
+    phoneNumber: null,
+    priceLevel: 0,
+    roadAddress: "서울특별시 마포구 토정로5길 10",
+    thumUrl:
+      "http://ldb.phinf.naver.net/20150831_299/1441019167860ziSL3_JPEG/116252608275357_0.jpg",
+  },
+];
+console.log(JSON.stringify(dummyRestaurant));
 io.on("connection", (socket) => {
   socket.join(socket.handshake.query.id);
   console.log("a user connected");
   const { id, email, JWT, name, imageUrl } = socket.handshake.query;
   const socketID = socket.id;
+
   users.push({ id, email, JWT, name, imageUrl, socketID });
 
   socket.on("together", (msg, fn) => {
@@ -91,9 +230,10 @@ io.on("connection", (socket) => {
       })
     );
   });
+
   socket.on("gameStart", (msg, fn) => {
     console.log(msg);
-    fn("gameStart msg from server");
+    fn(JSON.stringify(dummyRestaurant));
   });
   socket.on("gameUserFinish", (msg, fn) => {
     console.log(msg);
