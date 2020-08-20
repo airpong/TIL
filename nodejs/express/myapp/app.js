@@ -99,6 +99,29 @@ io.on("connection", (socket) => {
     console.log(msg);
     fn("gameUserFinish msg from server");
   });
+  socket.on("tmpEvent", (msg) => {
+    console.log(msg);
+    socket.emit(
+      "gameRoomUpdate",
+      JSON.stringify({
+        gameRoomUserList: [
+          {
+            id: 2,
+            name: "하창언",
+            imageUrl:
+              "https://lh6.googleusercontent.com/-aoBY_gzGubw/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucl3d9g2shwPeopi8H1s1synQa4jAA/photo.jpg",
+          },
+          {
+            id: 3,
+            name: "노영삼",
+            imageUrl:
+              "https://vpgrealty.ca/wp-content/uploads/2016/06/eric-agent-profile-image.jpg",
+          },
+        ],
+        hostId: 2,
+      })
+    );
+  });
   // setTimeout(() => {
   //   console.log("setTimeout func");
   //   io.emit("gameAllFinish", "gameAllFinish msg from server");
