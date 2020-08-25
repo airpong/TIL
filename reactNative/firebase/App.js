@@ -18,6 +18,7 @@ export default function App() {
     <View style={styles.container}>
       <TouchableOpacity onPress={tmp}>
         <Text>Open up App.js to start working on your app!</Text>
+        <View></View>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
