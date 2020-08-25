@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "firebase",
+    "slug": "firebase",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.airpong.firebase",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyABSWCP2M6Ny6G897sfJQ5o4_elLpyI184",
+          "authDomain": "analyticsexercise-4662d.firebaseapp.com",
+          "databaseURL": "https://analyticsexercise-4662d.firebaseio.com",
+          "projectId": "analyticsexercise-4662d",
+          "storageBucket": "analyticsexercise-4662d.appspot.com",
+          "messagingSenderId": "438177801405",
+          "appId": "1:438177801405:web:c6515decea1d6bfeb203d4",
+          "measurementId": "G-E7KSK3ZPG8"
+        }
+      }
+    },
+    "android": {
+      "package": "com.airpong.firebase",
+      "googleServicesFile": "./google-services.json"
+    }
+  }
+}
