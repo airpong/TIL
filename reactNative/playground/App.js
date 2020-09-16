@@ -7,7 +7,19 @@ import {
   Platform,
   TouchableOpacity,
 } from "react-native";
-
+import HaversineGeolocation from "haversine-geolocation";
+const points = [
+  {
+    latitude: 37.5379387,
+    longitude: 127.066518,
+  },
+  {
+    latitude: 37.5447048,
+    longitude: 127.0663154,
+  },
+];
+const abc = HaversineGeolocation.getDistanceBetween(points[0], points[1], "m"); // 1133062.7 m
+console.log(Math.round(abc / 10) * 10);
 export default () => {
   return (
     <View style={{ flex: 1 }} accessible={true}>
