@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "7475293634",
+    "firebase_url": "https://exercise-6654a.firebaseio.com",
+    "project_id": "exercise-6654a",
+    "storage_bucket": "exercise-6654a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7475293634:android:6f348fb24457cd8122fa5b",
+        "android_client_info": {
+          "package_name": "com.exercise.hcu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7475293634-9c4gi55njdlcq0jvvbrm4hprntrtblb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR_M_N9CsqwtY3qhR6SPi1NMX5qNIr6qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7475293634-9c4gi55njdlcq0jvvbrm4hprntrtblb8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "7475293634-qkc1604fk1kcqrj53u2qm25rpjfm1ouh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.exercise.hcu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

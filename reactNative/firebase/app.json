@@ -15,7 +15,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "com.airpong.firebase",
+      "bundleIdentifier": "com.exercise.hcu",
       "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": true
     },
@@ -35,7 +35,7 @@
       }
     },
     "android": {
-      "package": "com.airpong.firebase",
+      "package": "com.exercise.firebase",
       "googleServicesFile": "./google-services.json"
     }
   }

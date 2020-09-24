@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>7475293634-qkc1604fk1kcqrj53u2qm25rpjfm1ouh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.7475293634-qkc1604fk1kcqrj53u2qm25rpjfm1ouh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB-g9_FVSK2U5QtuHb08tuC2ex4SjI_cPI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>7475293634</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.exercise.hcu</string>
+	<key>PROJECT_ID</key>
+	<string>exercise-6654a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>exercise-6654a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:7475293634:ios:35b10bd7c207d4af22fa5b</string>
+	<key>DATABASE_URL</key>
+	<string>https://exercise-6654a.firebaseio.com</string>
+</dict>
+</plist>
