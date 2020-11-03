@@ -1,8 +1,8 @@
 n = int(input())
 m = int(input())
-edge = [[] for _ in range(n+1)]
-dpMap = [0] * (n+1)
-isVisit = [0] * (n+1)
+edge = [[] for _ in range(1000000)]
+dpMap = [0] * (1000000)
+isVisit = [0] * (1000000)
 answer = 0
 
 
@@ -20,10 +20,9 @@ def countEdge(start):
     global answer
     if isVisit[start]:
         return
-    isVisit[start] = True
+    isVisit[start] = 1
     for road in edge[start]:
         if road[1] + dpMap[road[0]] == dpMap[start]:
-            # print("쿠쿨핑퐁", start, road[0])
             answer += 1
             countEdge(road[0])
 
@@ -35,4 +34,5 @@ start, end = map(int, input().split())
 makeDpMap(start)
 countEdge(start)
 
-print(dpMap[start], answer, sep="\n")
+print(dpMap[start])
+print(answer)
